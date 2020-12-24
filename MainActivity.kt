@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
-        val covidService = retrofit.create(CovidGraph::class.java)
+        val covidService = retrofit.create(CovidService::class.java)
 
         covidService.getNationalData().enqueue(object : Callback<List<CovidData>> {
             override fun onFailure(call: Call<List<CovidData>>, t: Throwable) {
